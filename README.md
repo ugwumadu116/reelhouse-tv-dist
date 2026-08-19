@@ -35,7 +35,15 @@ git commit -am "Reel House <version>"
 git push
 ```
 
-Then redeploy the application in Coolify. Installing a new build over the old one keeps
-resume positions and saved sources, as long as it was signed with the same keystore.
+The push is enough: a GitHub webhook on this repository tells Coolify to rebuild, so a
+new build is live a minute or so after `git push` with nothing to click. The hook posts to
+`/webhooks/source/github/events/manual` on the Coolify host and is signed with the secret
+stored under the application's **Webhooks** tab — the two have to match, so if the hook
+ever starts returning 401, set a new secret in both places rather than clearing it in one.
+
+If the hook is down, *Redeploy* on the application in Coolify does the same job by hand.
+
+Installing a new build over the old one keeps resume positions and saved sources, as long
+as it was signed with the same keystore.
 
 The signing keystore lives with the app project and is **not** in this repository.
