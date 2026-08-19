@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reel House — install on your TV</title>
+<style>
+/* Deliberately conservative CSS. The target is a budget Android 9 TV browser, so no
+   custom properties, no grid, no clamp() — those are the things that break there. */
+html, body {
+  margin: 0;
+  padding: 0;
+  background: #0a0a0c;
+  color: #ede7da;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  -webkit-text-size-adjust: 100%;
+}
+.wrap {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 32px 72px 32px;
+}
+.mark {
+  color: #e3b23c;
+  font-size: 15px;
+  letter-spacing: 3px;
+  margin: 0 0 6px 0;
+}
+h1 {
+  font-size: 46px;
+  line-height: 1.05;
+  letter-spacing: 2px;
+  margin: 0 0 10px 0;
+  font-weight: 700;
+}
+.sub {
+  color: #8c8679;
+  font-size: 19px;
+  line-height: 1.5;
+  margin: 0 0 34px 0;
+}
+/* The button is the page. It is huge because it is aimed at from three metres away, and
+   it carries a thick focus ring because a remote moves focus, not a cursor. */
+a.get {
+  display: block;
+  background: #e3b23c;
+  color: #0a0a0c;
+  text-decoration: none;
+  font-size: 34px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-align: center;
+  padding: 30px 20px;
+  border: 4px solid #e3b23c;
+  border-radius: 3px;
+}
+a.get:focus,
+a.get:hover {
+  background: #0a0a0c;
+  color: #e3b23c;
+  border-color: #e3b23c;
+  outline: 4px solid #e3b23c;
+  outline-offset: 4px;
+}
+.short {
+  margin: 26px 0 0 0;
+  padding: 20px 22px;
+  background: #17151b;
+  border-left: 4px solid #e3b23c;
+}
+.short .lead {
+  color: #8c8679;
+  font-size: 15px;
+  letter-spacing: 1px;
+  margin: 0 0 8px 0;
+}
+.short .url {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 30px;
+  color: #ede7da;
+  word-break: break-all;
+  margin: 0;
+}
+.meta {
+  color: #8c8679;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 15px;
+  margin: 18px 0 0 0;
+  line-height: 1.7;
+  word-break: break-all;
+}
+h2 {
+  font-size: 15px;
+  letter-spacing: 3px;
+  color: #e3b23c;
+  margin: 46px 0 14px 0;
+}
+ol, ul {
+  font-size: 19px;
+  line-height: 1.75;
+  padding-left: 24px;
+  margin: 0;
+  color: #ede7da;
+}
+li { margin-bottom: 10px; }
+code {
+  font-family: "Courier New", Courier, monospace;
+  background: #17151b;
+  color: #e3b23c;
+  padding: 3px 7px;
+  font-size: 16px;
+  word-break: break-all;
+}
+.note {
+  color: #8c8679;
+  font-size: 17px;
+  line-height: 1.6;
+  margin-top: 12px;
+}
+hr {
+  border: 0;
+  border-top: 1px solid #221f28;
+  margin: 44px 0 0 0;
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <p class="mark">● REEL HOUSE</p>
+  <h1>Install on your TV</h1>
+  <p class="sub">Public-domain cinema, plus your own pages and streams side by side. Built for a remote.</p>
+
+  <a class="get" id="get" href="/a.apk" download>DOWNLOAD THE APK</a>
+
+  <div class="short">
+    <p class="lead">OR TYPE THIS INTO THE TV BROWSER</p>
+    <p class="url">tv.rivrafrica.com/a.apk</p>
+  </div>
+
+  <p class="meta">
+    Reel House 1.0 &nbsp;·&nbsp; 4.0 MB &nbsp;·&nbsp; Android 5.0 and later<br>
+    package com.reelhouse.tv<br>
+    sha256 441195d92b4c9fe3a64f154e5e511e067ff8b530d0a6c037d8d536d95ad2f90e
+  </p>
+
+  <h2>ON THE TV</h2>
+  <ol>
+    <li>Turn on <strong>Settings &rarr; Security &rarr; Unknown sources</strong> for whichever app will open the file — the browser or the file manager.</li>
+    <li>Open the TV's Browser and go to <strong>tv.rivrafrica.com/a.apk</strong>.</li>
+    <li>When the download finishes, open it and approve the install.</li>
+    <li>Reel House appears in your app grid.</li>
+  </ol>
+
+  <h2>IF THE BROWSER WON'T DOWNLOAD</h2>
+  <p class="note">Some budget TV browsers refuse to save files. Two ways round it:</p>
+  <ul>
+    <li>Put the APK on a USB stick from a laptop, plug it into the TV, and open it with the file manager.</li>
+    <li>Or install it over the network from a computer on the same Wi-Fi, with network debugging enabled on the TV:</li>
+  </ul>
+  <p class="note">
+    <code>adb connect TV-IP-ADDRESS:5555</code><br>
+    <code>adb install -r ReelHouse.apk</code>
+  </p>
+
+  <h2>UPDATING LATER</h2>
+  <p class="note">Install a new build straight over the old one and your resume positions and saved sources are kept. Reinstalling only fails if the APK was signed with a different key.</p>
+
+  <hr>
+  <p class="note">Every film in the app is public domain in the United States or released by its makers under a Creative Commons licence.</p>
+
+</div>
+<script>
+  // TV browsers move focus with the D-pad, so put focus on the one thing worth pressing.
+  var g = document.getElementById('get');
+  if (g && g.focus) { try { g.focus(); } catch (e) {} }
+</script>
+</body>
+</html>
